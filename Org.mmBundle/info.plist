@@ -1,0 +1,6 @@
+{	"contactEmailRot13" = "gbefgra.tehfg@tznvy.pbz";
+	contactName = "lars.chr@duus-hausmann.dk";
+	description = "Create a Org-mode todo from a MailMate message.";
+	name = "Org";
+	uuid = "4937E9D0-5392-11E3-8F96-0800200C9A66";
+}
