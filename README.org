@@ -1,0 +1,33 @@
+This bundle enables Mailmate to invoke emacsclient and org-capture. 
+
+This is the initial version, and basically everything is hard coded. 
+
+These are the prequisites:
+- Emacs installed from homebrew
+- Working org-capture setup
+- Working org-mac-message and org-mac-link setups
+
+There must be a capture config setup like this: 
+
+#+BEGIN_SRC emacs-lisp
+    (setq org-capture-templates
+          '(
+            ("m" "Tasks" entry
+           (file+headline "~/work/org/work.org" "Inbox")
+           "* TODO %^{Task}
+  Mailmate link: 
+  [[message://%l][Open Email]]
+  
+  %?
+  ")
+              )
+          )
+    
+#+END_SRC
+
+The directory =Org.mmBundle= can be symlinked into the correct
+location of MailMate. if MailMate is installed it will be something
+like this: 
+#+BEGIN_SRC sh
+ln -s Org.mmBundle /Applications/MailMate.app/Contents/SharedSupport/Bundles/.
+#+END_SRC
