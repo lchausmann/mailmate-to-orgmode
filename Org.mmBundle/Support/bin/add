@@ -16,7 +16,7 @@ tmpfile.puts(ENV['MM_SUBJECT'])
 subjectLine=ENV['MM_SUBJECT']
 tmpfile.puts(subjectLine)
 
-commandLine="/usr/local/bin/emacsclient -n org-protocol://capture://m/" + messageURI+ "/\"" + subjectLine + "\"/"
+commandLine="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n org-protocol://capture://y/" + messageURI+ "/\"" + subjectLine + "\"//"
 commandLine= commandLine + " & osascript -e 'tell application \"Emacs\"' -e 'activate' -e 'end tell'"
 tmpfile.puts(commandLine)
 tmpfile.puts ("ending\n")
