@@ -31,8 +31,9 @@ There must be a capture config setup like this:
 
 The directory =Org.mmBundle= can be symlinked into the correct
 location of MailMate. if MailMate is installed it will be something
-like this: 
+like this from the this directory.
 #+BEGIN_SRC sh
+  #!/bin/bash
   orgBundlePath=`pwd`
   cd /Applications/MailMate.app/Contents/SharedSupport/Bundles/
   ln -s ${orgBundlePath}/Org.mmBundle .
