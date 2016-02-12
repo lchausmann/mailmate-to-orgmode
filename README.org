@@ -5,6 +5,7 @@ This is the initial version, and basically everything is hard coded.
 These are the prequisites:
 - Emacs installed under /Applications
 - Working emacs-client setup from installed emacs
+- Org mode setup and used for various task management
 - Working org-protocol
 - Working org-capture setup
 - Working org-mac-message and org-mac-link setups
@@ -18,7 +19,7 @@ There must be a capture config setup like this:
   (setq org-capture-templates
         '(
           ("y" "Tasks" entry
-           (file+headline "~/work/org/work.org" "Inbox")
+           (file+headline "~/org/mail.org" "Inbox")
            "* TODO Email: %:description                         :Mail:
   Email with subject: [[message://%l][%:description]]
 
