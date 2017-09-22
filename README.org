@@ -1,6 +1,6 @@
-This bundle enables Mailmate to invoke emacsclient and org-capture. 
+This bundle enables Mailmate to invoke emacsclient and org-capture.
 
-This is the initial version, and basically everything is hard coded. 
+This is the initial version, and basically everything is hard coded.
 
 These are the prequisites:
 - Emacs installed under /Applications
@@ -10,7 +10,7 @@ These are the prequisites:
 - Working org-capture setup
 - Working org-mac-message and org-mac-link setups
 
-There must be a capture config setup like this: 
+There must be a capture config setup like this:
 
 #+BEGIN_SRC emacs-lisp
   (require 'org-protocol)
@@ -36,6 +36,7 @@ like this from the this directory.
 #+BEGIN_SRC sh
   #!/bin/bash
   orgBundlePath=`pwd`
-  cd /Applications/MailMate.app/Contents/SharedSupport/Bundles/
+  mkdir -p ~/Library/Application\ Support/MailMate/Bundles
+  cd ~/Library/Application\ Support/MailMate/Bundles/
   ln -s ${orgBundlePath}/Org.mmBundle .
 #+END_SRC
