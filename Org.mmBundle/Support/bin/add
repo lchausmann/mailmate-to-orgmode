@@ -3,26 +3,13 @@
 
 require 'uri'
 
-
-# Create temporary file (don't use this execution style if user input is involved)
-tmpfile = File.open("/tmp/mailmate-debug", "w+")
-tmpfile.puts ("Starting")
-
 # First line is used as the name of the task
 messageURI=URI::escape(ENV['MM_MESSAGE_ID'])
-tmpfile.puts(messageURI)
-tmpfile.puts(ENV['MM_FROM'])
-tmpfile.puts(ENV['MM_SUBJECT'])
 subjectLine=ENV['MM_SUBJECT']
-tmpfile.puts(subjectLine)
 
-commandLine="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n org-protocol://capture://y/" + messageURI+ "/\"" + subjectLine + "\"//"
+# The command line
+commandLine="/usr/local/bin/emacsclient -n 'org-protocol:///capture?template=y&url=" + messageURI+ "&title=" + subjectLine + "'"
 commandLine= commandLine + " & osascript -e 'tell application \"Emacs\"' -e 'activate' -e 'end tell'"
-tmpfile.puts(commandLine)
-tmpfile.puts ("ending\n")
-tmpfile.close
 
 # Use AppleScript to communicate with the application
 system(commandLine)
-
-
